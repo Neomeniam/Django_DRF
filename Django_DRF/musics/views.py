@@ -5,10 +5,6 @@ from musics.serializers import MusicSerializer
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -61,7 +57,7 @@ class LoginView(APIView):
 class MusicsViewSet(viewsets.ModelViewSet):
     queryset = Music.objects.all()
     serializer_class = MusicSerializer
-    #permission_classes = [permissions.IsAuthenticated, IsOwner]
+    permission_classes = [permissions.IsAuthenticated, IsOwner]
 
     def get_queryset(self):
         # Ensure that the user can only see their own photos

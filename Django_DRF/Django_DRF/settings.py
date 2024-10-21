@@ -28,7 +28,7 @@ DEBUG = True
 
 #ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2']
+ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2', '192.168.130.130']
 
 #Register the custom user model
 
@@ -48,8 +48,10 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
 
+    'geophotos_with_membership',
     'geophotos',
     'musics',
+    'users',
 ]
 
 REST_FRAMEWORK = {

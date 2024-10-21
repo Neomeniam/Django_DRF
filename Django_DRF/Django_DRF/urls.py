@@ -26,6 +26,7 @@ from rest_framework_simplejwt.views import (
 )
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework_simplejwt import views as jwt_views  
 
 
 router = DefaultRouter()
@@ -34,9 +35,8 @@ router.register('musics', views.MusicsViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/', include('musics.urls')),
-    path('api/', include('geophotos.urls')),
+    path('api/users/', include('users.urls')),
+    path('api/musics', include('musics.urls')),
+    path('api/geophotos', include('geophotos.urls')),
+    path('api/geophotos_with_membership/', include('geophotos_with_membership.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -8,3 +8,4 @@ router.register(r'geophotos', PhotoViewSet)
 urlpatterns = [
     path('', include(router.urls)),
 ]
+

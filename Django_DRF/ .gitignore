@@ -1,0 +1,29 @@
+# Media files
+media/
+
+# Database
+*.sqlite3
+*.db
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Django stuff
+*.log
+local_settings.py
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+env/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
